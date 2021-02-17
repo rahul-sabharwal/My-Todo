@@ -1,0 +1,194 @@
+
+.container-fluid{
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    width: 100%;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+}
+
+.sidebar{
+    background-color: crimson;
+}
+
+.tactive {
+    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    width: 33%;
+    display: table-cell;
+    text-align: center;
+    overflow-y: scroll;
+    transition: 500ms;
+    height: 100vh;
+    padding: 10px 10px;
+}
+.tcollapsed {
+    width: 5%;
+    display: table-cell;
+    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    text-align: center;
+    vertical-align: middle;
+    overflow-y: scroll;
+    height: 100vh;
+    transition: 500ms;
+}
+.tactive::-webkit-scrollbar, .tcollapsed::-webkit-scrollbar{
+    display: none;
+}
+
+.task-adder {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: rgb(161, 157, 157, 0.5);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: snow;
+    transition: 500ms;
+}
+.task-adder-shrink {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 80%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: rgb(161, 157, 157, 0.5);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: snow;
+    transition: 500ms;
+}
+.task-adder:hover {
+    background: rgb(161, 157, 157, 1);
+    transition: 500ms;
+}
+.task-adder:focus, .task-adder-shrink:focus {
+    outline: none;
+}
+
+
+.mainshrinked {
+    text-align: center;
+    width: 67%;
+    transition: 500ms;
+    padding: 10px 20px;
+}
+
+.mainexpanded {
+    text-align: center;
+    width : 95%;
+    transition: 500ms;
+    padding: 10px 20px;
+
+}
+
+.tsbtn {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 30%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: rgb(161, 157, 157, 0.5);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: snow;
+    transition: 500ms;
+}
+
+.subtasks {
+    text-align: center;
+}
+
+.bSubtask {
+    color: white;
+    font-size: 36px;
+    margin-top: 250px;
+    text-align:center;
+}
+
+
+.tsbtn:focus {
+    outline: none;
+}
+
+.fullscreen {
+    width: 100%;
+    transition: 500ms;
+    height: 100vh;
+}
+
+.subtasks-details {
+    background-color: green;
+}
+
+
+ul{
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.task {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #fff;
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.task-shrink {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: none;
+    background: #fff;
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 56px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
