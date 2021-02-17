@@ -20,6 +20,7 @@ var getSubtasks = (taskname) => {
 
     arr.forEach((element) => {
         let li = document.createElement('li');
+        li.setAttribute("class", "task");
         subtasklist.appendChild(li);
         li.innerHTML += element;
     });
@@ -53,7 +54,7 @@ function showSubtasks(taskname) {
 
     }
     var subtaskdiv = document.getElementById('subtasks');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task">+ Add Subtask to '+taskname+'</button>';
+    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task-adder">+ Add Subtask to '+taskname+'</button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
@@ -64,7 +65,9 @@ function showSubtasks(taskname) {
     console.log(arr);
 
     arr.forEach((element) => {
+        console.log("Wow")
         let li = document.createElement('li');
+        li.setAttribute("class", "task-shrink");
         subtasklist.appendChild(li);
         li.innerHTML += element;
     });
@@ -96,7 +99,7 @@ var addTask = () => {
             li.setAttribute("onclick", "showSubtasks(this.title)");
             if(collapsed){
                 li.setAttribute("id", "task"+taskObj.length);
-                li.setAttribute("class", "task-shrink");
+                li.setAttribute("class", "task");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
                 li.innerHTML += "#";
