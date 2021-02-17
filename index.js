@@ -53,7 +53,7 @@ function showSubtasks(taskname) {
 
     }
     var subtaskdiv = document.getElementById('subtasks');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task-adder">+ Add Subtask to '+taskname+'</button>';
+    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task">+ Add Subtask to '+taskname+'</button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
