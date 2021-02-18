@@ -2,13 +2,13 @@ var stvisible = false;
 
 var taskObj = [];
 var subtasks = [];
-var collapsed = false;
+var collapsed = true;
 
 
 
 var getSubtasks = (taskname) => {
     var subtaskdiv = document.getElementById('main');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
+    subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
@@ -27,8 +27,6 @@ var getSubtasks = (taskname) => {
 }
 
 var addSubtask = (taskname) => {
-    taskname = taskname.substring(17, taskname.length+1);
-    console.log(taskname);
     const newsubtask = prompt("Add New Subtask in "+taskname);
     if(newsubtask===null){
         return;
@@ -49,12 +47,12 @@ function showSubtasks(taskname) {
     var subtasklist = document.getElementById('main');
     getSubtasks(taskname);
     if (collapsed){    
-        subtasklist.innerHTML = '<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
+        subtasklist.innerHTML = '<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     } else{
 
     }
     var subtaskdiv = document.getElementById('main');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
+    subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
