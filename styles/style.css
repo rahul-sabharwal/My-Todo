@@ -84,19 +84,12 @@
     outline: none;
 }
 
-#main{
-    width: 85%;
-    height: 90vh;
-    text-align: center;
-    margin: auto;
-    position:relative;
-}
 #main::-webkit-scrollbar {
     display: none;
 }
 .mainshrinked {
     text-align: center;
-    width: 67%;
+    width: 60%;
     transition: 500ms;
     padding: 10px 20px;
     overflow-y: scroll;
