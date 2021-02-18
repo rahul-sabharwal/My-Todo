@@ -108,7 +108,7 @@ var addTask = () => {
                 li.setAttribute("class", "task");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
-                li.innerHTML = "#";
+                li.innerHTML = element.charAt(0).toUpperCase();
             }else{
                 li.setAttribute("id", "task"+taskObj.length);
                 li.setAttribute("class", "task");
