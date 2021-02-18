@@ -38,7 +38,7 @@
 }
 
 .task-adder {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
     width: 80%;
     border-radius: 28px;
@@ -57,7 +57,7 @@
     transition: 500ms;
 }
 .task-adder-shrink {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
     width: 80%;
     height: 80%;
@@ -88,6 +88,7 @@
     height: 90vh;
     text-align: center;
     margin: auto;
+    position:relative;
 }
 #main::-webkit-scrollbar {
     display: none;
@@ -251,4 +252,32 @@ ul{
 }
 .navbar-brand:hover {
     color: grey;
+}
+
+.subtask-adder {
+    border-radius: 50px;
+    box-shadow: none;
+    background: rgb(23, 34, 252, 0.8);
+    align-items: center;
+    background-image: none;
+    border: none;
+    color: #37444c;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    padding: auto;
+    cursor: pointer;
+    color: snow;
+    transition: 500ms;
+    font-size: 35px;
+    position: absolute;
+    right:    70px;
+    bottom:   70px;
+}
+.subtask-adder:focus{
+    outline: none;
 }

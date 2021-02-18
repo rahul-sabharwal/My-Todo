@@ -7,8 +7,8 @@ var collapsed = false;
 
 
 var getSubtasks = (taskname) => {
-    var subtaskdiv = document.getElementById('subtasks');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task-adder">+ Add Subtask to '+taskname+'</button>';
+    var subtaskdiv = document.getElementById('main');
+    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
@@ -46,15 +46,15 @@ var addSubtask = (taskname) => {
 
 function showSubtasks(taskname) {
     console.log(taskname);
-    var subtasklist = document.getElementById('subtasks');
+    var subtasklist = document.getElementById('main');
     getSubtasks(taskname);
     if (collapsed){    
-        subtasklist.innerHTML = '<button onclick="addSubtask(this.innerHTML)" type="button" class="task-adder">+ Add Subtask to '+taskname+'</button>';
+        subtasklist.innerHTML = '<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     } else{
 
     }
-    var subtaskdiv = document.getElementById('subtasks');
-    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="task-adder">+ Add Subtask to '+taskname+'</button>';
+    var subtaskdiv = document.getElementById('main');
+    subtaskdiv.innerHTML='<button onclick="addSubtask(this.innerHTML)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
     for(var i=0;i<taskObj.length;i++){
