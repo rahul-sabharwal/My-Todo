@@ -1,27 +1,39 @@
 
-.container-fluid{
+.root{
     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    left: 0;
+}
+
+.navbarhvisible {
+    height: 10vh;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+}
+
+.navbarhcollapsed {
+        height: 0px;
+        width: 0px;
+        overflow-y: hidden;
+        overflow-x: hidden;
 }
 
 .row {
     display: flex;
 }
 
-#main{
-    overflow-y: scroll;
-    height: 90vh;
-}
-
 .tactive {
-    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    background-image: linear-gradient( 120deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
     width: 33%;
     display: table-cell;
     text-align: center;
     overflow-y: scroll;
     transition: 500ms;
-    height: 90vh;
+    height: 100vh;
     padding: 10px 10px;
     float: left;
 }
@@ -29,13 +41,18 @@
     width: 5%;
     float: left;
     display: table-cell;
-    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    background-image: linear-gradient( 120deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
     text-align: center;
     vertical-align: middle;
     overflow-y: scroll;
-    height: 90vh;
+    height: 100vh;
     transition: 500ms;
     min-width: 70px;
+}
+
+#main{
+    overflow-y: scroll;
+    height: 100vh;
 }
 .tactive::-webkit-scrollbar, .tcollapsed::-webkit-scrollbar{
     display: none;
@@ -97,14 +114,23 @@
     transition: 500ms;
     padding: 10px 20px;
     overflow-y: scroll;
+    height: 100vh;
 }
-
+.mainextrashrinked{
+    text-align: center;
+    width: 40%;
+    transition: 500ms;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    height: 100vh;
+}
 .mainexpanded {
-    width: 85%;
+    width: 80%;
     text-align: center;
     transition: 500ms;
     padding: 10px 20px;
     overflow-y: scroll;
+    height: 100vh;
 }
 
 .subtasks::-webkit-scrollbar {
@@ -140,7 +166,8 @@
     display: block;
     transition: 800ms;
   }
-.toggleSidebarbtn:focus, .toggleSidebarbtncollapsed:focus {
+.toggleSidebarbtn:focus, .toggleSidebarbtncollapsed:focus, .subtask-adder:focus,
+.tsbtn:focus, .toggleNavbarbtn:focus{
     outline: none;
 }
 
@@ -175,10 +202,6 @@
     text-align:center;
 }
 
-
-.tsbtn:focus {
-    outline: none;
-}
 
 .fullscreen {
     width: 100%;
@@ -239,10 +262,7 @@ ul{
     cursor: pointer;
 }
 
-.navbar {
-    height: 10vh;
-    background-color: #212121;
-}
+
 
 .navbar-brand {
     text-decoration: none;
@@ -276,6 +296,60 @@ ul{
     right: 50px;
     bottom: 50px;
 }
-.subtask-adder:focus{
+
+.toggleNavbarbtn {
+    margin-top: 5px;
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+    padding: auto;
+    cursor: pointer;
+    border-radius: 25px;
+    float: right;
+    transition: 800ms;
+}
+
+
+.navbarvvisible{
+    background-image: linear-gradient( 104.7deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 15px;
+}
+
+.navbarvcollapsed{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 0px;
+}
+
+.navbtn {
+    text-align: center;
+    background: rgb(161, 157, 157, 0.5);
+    border: none;
+    height: 35px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+    border-radius: 18px;
+    transition: 300ms;
+    color: whitesmoke;
+    padding: 0 15px;
+}
+.navbtn:hover {
+    background-color: #404040;
+    transition: 300ms;
+}
+.navbtn:focus {
     outline: none;
+}
+
+body{
+    height: 100vh;
+    overflow-y: hidden;
 }

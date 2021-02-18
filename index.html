@@ -10,11 +10,24 @@
     <link rel="stylesheet" href="./styles/style.css" >
 </head>
 <body>
-    <header class="navbar">
-        <a class="navbar-brand" href="#">Hello</a>
-    </header>
-    <div class="container-fluid">
-        <div class="row">
+    <div id = "navbarh" class="navbarhvisible">
+            <a class="navbar-brand" href="#">MyTodo</a>
+            <div class="nav">
+                <button type="button" class="navbtn">Todo</button>
+            </div>
+            <button  id ="horizontalnav" onclick = "toggleNavbar()" class="toggleNavbarbtn"><i id="togglevert" class="fa fa-arrows-v"></i></button>
+    </div>
+    <div id ="root" class="root">
+        <div id="row" class="container-fluid row">
+
+            <div id="navbarv" class="navbarvcollapsed">
+                <a class="navbar-brand" href="#">MyTodo</a>
+                <div class="nav">
+                    <button type="button" class="navbtn">Todo</button>
+                </div>
+                <button id ="verticalnav" onclick = "toggleNavbar()" class="toggleNavbarbtn"><i class="fa fa-arrows-h" aria-hidden="true"></i></button>
+            </div>
+
             <div id="sidebar" class="tcollapsed">
                 <div id = "tasks">
                     <div style="height: 30px;">
@@ -25,6 +38,7 @@
                     </ul>
                 </div>
             </div>
+
             <div id="main" class="mainexpanded">
                 <div id="subtasks" class="subtasks cols">
                     <div id ="subtasksdiv">
@@ -34,6 +48,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

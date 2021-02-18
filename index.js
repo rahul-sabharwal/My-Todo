@@ -3,8 +3,7 @@ var stvisible = false;
 var taskObj = [];
 var subtasks = [];
 var collapsed = true;
-
-
+var navhorizontal = true;
 
 var getSubtasks = (taskname) => {
     var subtaskdiv = document.getElementById('main');
@@ -125,9 +124,13 @@ var addTask = () => {
 var toggleSidebar = () => {
     console.log(document.getElementById("tasks"))
     if(!collapsed){
+        if(!navhorizontal){
+            document.getElementById("main").setAttribute("class", "mainshrinked")
+        }else{
+            document.getElementById("main").setAttribute("class", "mainshrinked")
+        }
         collapsed = true;
         document.getElementById("sidebar").setAttribute("class", "tcollapsed")
-        document.getElementById("main").setAttribute("class", "mainexpanded")
         document.getElementById("addtask").setAttribute("class", "task-adder-shrink")
         document.getElementById("addtask").innerHTML = "+";
         document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtncollapsed")
@@ -152,14 +155,21 @@ var toggleSidebar = () => {
         });
 
     }else{
+        if(!navhorizontal){
+            console.log("159")
+            document.getElementById("main").setAttribute("class", "mainextrashrinked")
+        }else{
+            console.log("162")
+            document.getElementById("main").setAttribute("class", "mainshrinked")
+        }
         collapsed=false;
         document.getElementById("sidebar").setAttribute("class", "tactive")
-        document.getElementById("main").setAttribute("class", "mainshrinked")
+        
         document.getElementById("addtask").setAttribute("class", "task-adder")
         document.getElementById("addtask").innerHTML = "+  Add Task";
         document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtn")
         document.getElementById("toggleicon").setAttribute("class","fa fa-close")
-
+        
         var ar = [];
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
@@ -178,5 +188,28 @@ var toggleSidebar = () => {
             li.innerHTML += element;
 
         });
+    }
+}
+
+
+var toggleNavbar = () => {
+    if(navhorizontal){
+        if(!collapsed){
+            console.log("196")
+            document.getElementById("main").setAttribute("class", "mainextrashrinked")
+        }else{
+            console.log("198")
+            document.getElementById("main").setAttribute("class", "mainshrinked")
+        }
+        navhorizontal = false;
+        document.getElementById("navbarh").setAttribute("class", "navbarhcollapsed");
+        document.getElementById("navbarv").setAttribute("class", "navbarvvisible");
+
+    }else{
+        navhorizontal = true;
+        document.getElementById("navbarv").setAttribute("class", "navbarvcollapsed");
+        document.getElementById("navbarh").setAttribute("class", "navbarhvisible");
+        document.getElementById("main").setAttribute("class", "mainexpanded")
+
     }
 }
