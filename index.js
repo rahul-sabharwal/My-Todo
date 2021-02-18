@@ -75,6 +75,12 @@ function showSubtasks(taskname) {
 
 var addTask = () => {
     const newtask = prompt ("Add New Task...");
+    for(var i=0;i<taskObj.length;i++){
+        if(newtask===taskObj[i].tname){
+            alert("Task Already Present!!!");
+            return;
+        }
+    }
     if(newtask === null){
         return;
     }
@@ -102,7 +108,7 @@ var addTask = () => {
                 li.setAttribute("class", "task");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
-                li.innerHTML += "#";
+                li.innerHTML = "#";
             }else{
                 li.setAttribute("id", "task"+taskObj.length);
                 li.setAttribute("class", "task");
@@ -143,7 +149,7 @@ var toggleSidebar = () => {
                 li.setAttribute("class", "task-shrink");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
-                li.innerHTML += "#";
+                li.innerHTML = "#"
 
         });
 
