@@ -128,12 +128,12 @@ var toggleSidebar = () => {
     console.log(document.getElementById("tasks"))
     if(!collapsed){
         collapsed = true;
-        document.getElementById("tsbtn").innerHTML = "Open Sidebar"
         document.getElementById("sidebar").setAttribute("class", "tcollapsed")
         document.getElementById("main").setAttribute("class", "mainexpanded")
         document.getElementById("addtask").setAttribute("class", "task-adder-shrink")
         document.getElementById("addtask").innerHTML = "+";
-        
+        document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtncollapsed")
+        document.getElementById("toggleicon").setAttribute("class","fa fa-arrow-right")
         var ar = [];
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
@@ -149,17 +149,19 @@ var toggleSidebar = () => {
                 li.setAttribute("class", "task-shrink");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
-                li.innerHTML = "#"
+                li.innerHTML = element.charAt(0).toUpperCase();
 
         });
 
     }else{
         collapsed=false;
-        document.getElementById("tsbtn").innerHTML = "Close Sidebar"
         document.getElementById("sidebar").setAttribute("class", "tactive")
         document.getElementById("main").setAttribute("class", "mainshrinked")
         document.getElementById("addtask").setAttribute("class", "task-adder")
         document.getElementById("addtask").innerHTML = "+  Add Task";
+        document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtn")
+        document.getElementById("toggleicon").setAttribute("class","fa fa-close")
+
         var ar = [];
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';

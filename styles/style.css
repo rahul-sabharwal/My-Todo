@@ -2,7 +2,7 @@
 .container-fluid{
     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 .row {
@@ -17,7 +17,7 @@
     text-align: center;
     overflow-y: scroll;
     transition: 500ms;
-    height: 100vh;
+    height: 90vh;
     padding: 10px 10px;
     float: left;
 }
@@ -29,7 +29,7 @@
     text-align: center;
     vertical-align: middle;
     overflow-y: scroll;
-    height: 100vh;
+    height: 90vh;
     transition: 500ms;
     min-width: 70px;
 }
@@ -85,7 +85,7 @@
 }
 
 #main{
-    height: 100vh;
+    height: 90vh;
     text-align: center;
     margin: auto;
 }
@@ -98,7 +98,6 @@
     transition: 500ms;
     padding: 10px 20px;
     overflow-y: scroll;
-
 }
 
 .mainexpanded {
@@ -111,6 +110,39 @@
 
 .subtasks::-webkit-scrollbar {
     display: none;
+}
+
+.toggleSidebarbtn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+    padding: auto;
+    cursor: pointer;
+    border-radius: 25px;
+    float: right;
+    transition: 800ms;
+  }
+  .toggleSidebarbtncollapsed {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+    padding: auto;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transition: 800ms;
+  }
+.toggleSidebarbtn:focus, .toggleSidebarbtncollapsed:focus {
+    outline: none;
 }
 
 .tsbtn {
@@ -208,3 +240,15 @@ ul{
     cursor: pointer;
 }
 
+.navbar {
+    height: 10vh;
+    background-color: #212121;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.navbar-brand:hover {
+    color: grey;
+}
