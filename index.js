@@ -127,7 +127,8 @@ var toggleSidebar = () => {
         if(!navhorizontal){
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }else{
-            document.getElementById("main").setAttribute("class", "mainshrinked")
+            console.log(130)
+            document.getElementById("main").setAttribute("class", "mainexpanded")
         }
         collapsed = true;
         document.getElementById("sidebar").setAttribute("class", "tcollapsed")
@@ -206,10 +207,17 @@ var toggleNavbar = () => {
         document.getElementById("navbarv").setAttribute("class", "navbarvvisible");
 
     }else{
+        if(collapsed){
+            console.log("210")
+            document.getElementById("main").setAttribute("class", "mainexpanded")
+        }
+        else{
+            console.log("214")
+            document.getElementById("main").setAttribute("class", "mainshrinked")
+        }
         navhorizontal = true;
         document.getElementById("navbarv").setAttribute("class", "navbarvcollapsed");
         document.getElementById("navbarh").setAttribute("class", "navbarhvisible");
-        document.getElementById("main").setAttribute("class", "mainexpanded")
 
     }
 }
