@@ -19,7 +19,7 @@ var getSubtasks = (taskname) => {
 
     arr.forEach((element) => {
         let li = document.createElement('li');
-        li.setAttribute("class", "task");
+        li.setAttribute("class", "subtask");
         subtasklist.appendChild(li);
         li.innerHTML += element;
     });
