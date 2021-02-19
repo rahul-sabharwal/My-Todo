@@ -1,22 +1,29 @@
-var stvisible = false;
-
+// Main object for task and subtasks
 var taskObj = [];
 var subtasks = [];
+
+// Boolean to check wether sidebar is collapsed or expanded
 var collapsed = true;
+
+// Boolean to check whether navbar is horizontal or vertical
 var navhorizontal = true;
 
+
+// Function to get all subtasks
 var getSubtasks = (taskname) => {
     var subtaskdiv = document.getElementById('main');
     subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
+    
+    // traversing through object to get subtask of particular task
     for(var i=0;i<taskObj.length;i++){
         if(taskObj[i].tname === taskname){
             var arr = taskObj[i].subtasks;
         };
     }
-    console.log(arr);
 
+    // manipulating DOM for subtasks
     arr.forEach((element) => {
         let li = document.createElement('li');
         li.setAttribute("class", "subtask");
@@ -25,11 +32,15 @@ var getSubtasks = (taskname) => {
     });
 }
 
+
+// Function to add a new subtask
 var addSubtask = (taskname) => {
     const newsubtask = prompt("Add New Subtask in "+taskname);
+    // Check for Null Value
     if(newsubtask===null){
         return;
     }
+    // Check for empty spaces values
     else if(/\S/.test(newsubtask)){
         for(var i=0;i<taskObj.length;i++){
             if(taskObj[i].tname === taskname){
@@ -41,15 +52,11 @@ var addSubtask = (taskname) => {
     getSubtasks(taskname);
 }
 
+
+// Function to show subtasks when a task is being clicked
 function showSubtasks(taskname) {
-    console.log(taskname);
     var subtasklist = document.getElementById('main');
     getSubtasks(taskname);
-    if (collapsed){    
-        subtasklist.innerHTML = '<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
-    } else{
-
-    }
     var subtaskdiv = document.getElementById('main');
     subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
@@ -59,7 +66,6 @@ function showSubtasks(taskname) {
             var arr = taskObj[i].subtasks;
         };
     }
-    console.log(arr);
 
     arr.forEach((element) => {
         console.log("Wow")
@@ -70,17 +76,22 @@ function showSubtasks(taskname) {
     });
 }
 
+// Function to add a new task
 var addTask = () => {
     const newtask = prompt ("Add New Task...");
+
+    // Handle duplicacy of task
     for(var i=0;i<taskObj.length;i++){
         if(newtask===taskObj[i].tname){
             alert("Task Already Present!!!");
             return;
         }
     }
+    // Check null values
     if(newtask === null){
         return;
     }
+    // Check value of empty spaces
     if(/\S/.test(newtask)){
         var element = {
             tname : newtask,
@@ -89,7 +100,7 @@ var addTask = () => {
         taskObj.push(element);
         localStorage.taskObj = taskObj;
     }
-
+    // Check value of empty spaces
     if(/\S/.test(element.tname)){
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
@@ -100,6 +111,8 @@ var addTask = () => {
         ar.forEach((element) => {
             let li = document.createElement('li');
             li.setAttribute("onclick", "showSubtasks(this.title)");
+            
+            // if sidebar is collapsed show first letter of task in capital
             if(collapsed){
                 li.setAttribute("id", "task"+taskObj.length);
                 li.setAttribute("class", "task");
@@ -116,11 +129,10 @@ var addTask = () => {
 
         });
     }
-
-    
-
 }
 
+
+// Function to toggle sidebar (to collapse and expand)
 var toggleSidebar = () => {
     console.log(document.getElementById("tasks"))
     if(!collapsed){
@@ -192,14 +204,12 @@ var toggleSidebar = () => {
     }
 }
 
-
+// Toggle Navbar to set Vertical or Horizontal
 var toggleNavbar = () => {
     if(navhorizontal){
         if(!collapsed){
-            console.log("196")
             document.getElementById("main").setAttribute("class", "mainextrashrinked")
         }else{
-            console.log("198")
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }
         navhorizontal = false;
@@ -208,11 +218,9 @@ var toggleNavbar = () => {
 
     }else{
         if(collapsed){
-            console.log("210")
             document.getElementById("main").setAttribute("class", "mainexpanded")
         }
         else{
-            console.log("214")
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }
         navhorizontal = true;
