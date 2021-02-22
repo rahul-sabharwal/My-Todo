@@ -45,10 +45,11 @@ var addSubtask = (taskname) => {
         for(var i=0;i<taskObj.length;i++){
             if(taskObj[i].tname === taskname){
                 taskObj[i].subtasks.push(newsubtask);
-                localStorage.taskObj = taskObj;
             };
         }
     }
+
+    // getting subtasks afer adding new subtask
     getSubtasks(taskname);
 }
 
@@ -58,6 +59,8 @@ function showSubtasks(taskname) {
     var subtasklist = document.getElementById('main');
     getSubtasks(taskname);
     var subtaskdiv = document.getElementById('main');
+
+    // including button for adding subtsks
     subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
@@ -67,8 +70,8 @@ function showSubtasks(taskname) {
         };
     }
 
+    // traversing subtasks add shrinking
     arr.forEach((element) => {
-        console.log("Wow")
         let li = document.createElement('li');
         li.setAttribute("class", "task-shrink");
         subtasklist.appendChild(li);
@@ -119,7 +122,7 @@ var addTask = () => {
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
                 li.innerHTML = element.charAt(0).toUpperCase();
-            }else{
+            } else {
                 li.setAttribute("id", "task"+taskObj.length);
                 li.setAttribute("class", "task");
                 li.setAttribute("title", element);
@@ -135,11 +138,11 @@ var addTask = () => {
 // Function to toggle sidebar (to collapse and expand)
 var toggleSidebar = () => {
     console.log(document.getElementById("tasks"))
+
     if(!collapsed){
         if(!navhorizontal){
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }else{
-            console.log(130)
             document.getElementById("main").setAttribute("class", "mainexpanded")
         }
         collapsed = true;
@@ -154,7 +157,6 @@ var toggleSidebar = () => {
         for(var i=0;i<taskObj.length;i++){
             ar.push(taskObj[i].tname);
         }
-        console.log(ar)
 
         ar.forEach((element) => {
             let li = document.createElement('li');

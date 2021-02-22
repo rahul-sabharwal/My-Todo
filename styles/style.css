@@ -1,9 +1,8 @@
 body{
     height: 100vh;
     overflow-y: hidden;
+    background-color: #2f80ed;
 }
-
-
 
 
 /* Horizontal Navbar Style */
@@ -13,26 +12,29 @@ body{
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
-    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    background-color: #0b2537;
     transition: 500ms;
 }
 
+/* Horizontal Navbar Style when collapsed*/
 .navbarhcollapsed {
-        height: 0px;
-        width: 0px;
-        overflow-y: hidden;
-        overflow-x: hidden;
+    background-color: #0b2537;
+    height: 0px;
+    width: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
+/* Navbar brand style */
 .navbar-brand {
     text-decoration: none;
     color: whitesmoke;
 }
+
+/* Navbar Brand on hovering */
 .navbar-brand:hover {
     color: grey;
 }
-
-
 
 
 /* Style for Nav buttons inside Navbar */
@@ -48,6 +50,8 @@ body{
     color: whitesmoke;
     padding: 0 15px;
 }
+
+/* Style for Nav buttons inside Navbar on hovering*/
 .navbtn:hover {
     background-color: #404040;
     transition: 300ms;
@@ -58,8 +62,7 @@ body{
 
 /* root div style */
 .root{
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    width: 100%;
+    background-color: #2f80ed;
     height: 100vh;
     left: 0;
 }
@@ -71,7 +74,7 @@ body{
 
 /* Vertical Navbar Style */
 .navbarvvisible{
-    background-image: linear-gradient( 104.7deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    background-color: #051826;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,16 +84,18 @@ body{
     transition: 800ms;
 }
 
+/* Vertical Navbar Style when collapsed*/
 .navbarvcollapsed{
+    background-color: #051826;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 0px;
 }
 
 
-/* Sidebar (Taks) */
+/* Sidebar (Tasks) */
 .tactive {
-    background-image: linear-gradient( 120deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    background-color: #0b2537;
     width: 33%;
     display: table-cell;
     text-align: center;
@@ -100,11 +105,13 @@ body{
     padding: 10px 10px;
     float: left;
 }
+
+/* Sidebar (Tasks)  when collapsed*/
 .tcollapsed {
+    background-color: #0b2537;
     width: 5%;
     float: left;
     display: table-cell;
-    background-image: linear-gradient( 120deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
     text-align: center;
     vertical-align: middle;
     overflow-y: scroll;
@@ -112,10 +119,13 @@ body{
     transition: 500ms;
     min-width: 70px;
 }
+
+/* remove overflow scrollbar */
 .tactive::-webkit-scrollbar, .tcollapsed::-webkit-scrollbar{
     display: none;
 }
 
+/* task adder button */
 .task-adder {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -135,6 +145,8 @@ body{
     color: snow;
     transition: 500ms;
 }
+
+/* task adder button on shrink */
 .task-adder-shrink {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -155,6 +167,8 @@ body{
     color: snow;
     transition: 500ms;
 }
+
+/* task adder on hover */
 .task-adder:hover {
     background: rgb(161, 157, 157, 1);
     transition: 500ms;
@@ -162,6 +176,8 @@ body{
 .task-adder:focus, .task-adder-shrink:focus {
     outline: none;
 }
+
+/* task model  style */
 .task {
     margin-bottom: 10px;
     width: 80%;
@@ -181,6 +197,8 @@ body{
     padding-top: 15px;
     cursor: pointer;
 }
+
+/* task model  style when shrinked */
 .task-shrink {
     margin-bottom: 10px;
     width: 80%;
@@ -208,7 +226,7 @@ body{
     overflow-y: scroll;
     height: 100vh;
 }
-
+/* removing scrollbar */
 #main::-webkit-scrollbar {
     display: none;
 }
@@ -220,6 +238,8 @@ body{
     overflow-y: scroll;
     height: 100vh;
 }
+
+/* style when both sidebar and vertical navbar are expanded*/
 .mainextrashrinked{
     text-align: center;
     width: 45%;
@@ -228,6 +248,7 @@ body{
     overflow-y: scroll;
     height: 100vh;
 }
+/* style when every thing is collapsed*/
 .mainexpanded {
     width: 80%;
     text-align: center;
@@ -237,10 +258,12 @@ body{
     height: 100vh;
 }
 
+/* removing scrollbar */
 .subtasks::-webkit-scrollbar {
     display: none;
 }
 
+/* button style to collapse and expand */
 .toggleSidebarbtn {
     background-color: DodgerBlue;
     border: none;
@@ -254,6 +277,7 @@ body{
     float: right;
     transition: 800ms;
   }
+
   .toggleSidebarbtncollapsed {
     background-color: DodgerBlue;
     border: none;
@@ -275,6 +299,7 @@ body{
     outline: none;
 }
 
+/* toggle sidebar button */
 .tsbtn {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -295,6 +320,7 @@ body{
     transition: 500ms;
 }
 
+/* subtasks style */
 .subtasks {
     text-align: center;
 }
@@ -306,6 +332,7 @@ body{
     text-align:center;
 }
 
+/* list stylling */
 ul{
     width: 100%;
     list-style-type: none;
