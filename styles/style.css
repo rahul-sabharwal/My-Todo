@@ -294,7 +294,6 @@ body {
     width: 30px;
     padding: auto;
     cursor: pointer;
-    margin-top: 10px;
     border-radius: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -308,27 +307,6 @@ body {
 .tsbtn:focus,
 .toggleNavbarbtn:focus {
     outline: none;
-}
-
-/* toggle sidebar button */
-.tsbtn {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 30%;
-    border-radius: 28px;
-    box-shadow: none;
-    background: rgb(161, 157, 157, 0.5);
-    align-items: center;
-    background-image: none;
-    border: none;
-    color: #37444c;
-    height: 56px;
-    overflow: hidden;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: snow;
-    transition: 500ms;
 }
 
 /* subtasks style */
