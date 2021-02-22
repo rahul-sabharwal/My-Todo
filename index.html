@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,23 +11,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custo Style File -->
-    <link rel="stylesheet" href="./styles/style.css" >
+    <link rel="stylesheet" href="./styles/style.css">
     <!-- Tab Icon -->
     <link rel="icon" href="./assets//taskmanager.png">
 
 </head>
+
 <body>
     <!-- Horizontal Header Navigation -->
-    <div id = "navbarh" class="navbarhvisible">
-            <a class="navbar-brand" href="#">MyTodo</a>
-            <div class="nav">
-                <button type="button" class="navbtn">Todo</button>
-            </div>
-            <button  id ="horizontalnav" onclick = "toggleNavbar()" class="toggleNavbarbtn"><i id="togglevert" class="fa fa-arrows-v"></i></button>
+    <div id="navbarh" class="navbarhvisible">
+        <a class="navbar-brand" href="#">MyTodo</a>
+        <div class="nav">
+            <button type="button" class="navbtn">Todo</button>
+        </div>
+        <button id="horizontalnav" onclick="toggleNavbar()" class="toggleNavbarbtn"><i id="togglevert" class="fa fa-arrows-v"></i></button>
     </div>
 
     <!-- Root Content -->
-    <div id ="root" class="root">
+    <div id="root" class="root">
         <div id="row" class="container-fluid row">
 
             <!-- Vertical Navbar initially collapsed -->
@@ -35,14 +37,14 @@
                 <div class="nav">
                     <button type="button" class="navbtn">Todo</button>
                 </div>
-                <button id ="verticalnav" onclick = "toggleNavbar()" class="toggleNavbarbtn"><i class="fa fa-arrows-h" aria-hidden="true"></i></button>
+                <button id="verticalnav" onclick="toggleNavbar()" class="toggleNavbarbtn"><i class="fa fa-arrows-h" aria-hidden="true"></i></button>
             </div>
 
             <!-- Sidebar(Task) collapsed initially-->
             <div id="sidebar" class="tcollapsed">
-                <div id = "tasks">
+                <div id="tasks">
                     <div style="height: 30px;">
-                        <button onclick = "toggleSidebar()" id ="toggleSidebarbtn" class="toggleSidebarbtncollapsed"><i id="toggleicon" class="fa fa-arrow-right"></i></button>
+                        <button onclick="toggleSidebar()" id="toggleSidebarbtn" class="toggleSidebarbtncollapsed"><i id="toggleicon" class="fa fa-arrow-right"></i></button>
                     </div>
                     <button onclick="addTask()" type="button" id="addtask" class="task-adder">+</button>
                     <ul id="tasklist">
@@ -53,7 +55,7 @@
             <!-- Main view including subtasks expanded initially -->
             <div id="main" class="mainexpanded">
                 <div id="subtasks" class="subtasks cols">
-                    <div id ="subtasksdiv">
+                    <div id="subtasksdiv">
                         <div class="bSubtask">
                             Click On Task to View and Add Subtasks.
                         </div>

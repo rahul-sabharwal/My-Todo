@@ -1,4 +1,4 @@
-body{
+body {
     height: 100vh;
     overflow-y: hidden;
     background-color: #2f80ed;
@@ -56,12 +56,13 @@ body{
     background-color: #404040;
     transition: 300ms;
 }
+
 .navbtn:focus {
     outline: none;
 }
 
 /* root div style */
-.root{
+.root {
     background-color: #2f80ed;
     height: 100vh;
     left: 0;
@@ -73,7 +74,7 @@ body{
 }
 
 /* Vertical Navbar Style */
-.navbarvvisible{
+.navbarvvisible {
     background-color: #051826;
     display: flex;
     flex-direction: column;
@@ -85,7 +86,7 @@ body{
 }
 
 /* Vertical Navbar Style when collapsed*/
-.navbarvcollapsed{
+.navbarvcollapsed {
     background-color: #051826;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -121,7 +122,8 @@ body{
 }
 
 /* remove overflow scrollbar */
-.tactive::-webkit-scrollbar, .tcollapsed::-webkit-scrollbar{
+.tactive::-webkit-scrollbar,
+.tcollapsed::-webkit-scrollbar {
     display: none;
 }
 
@@ -173,7 +175,9 @@ body{
     background: rgb(161, 157, 157, 1);
     transition: 500ms;
 }
-.task-adder:focus, .task-adder-shrink:focus {
+
+.task-adder:focus,
+.task-adder-shrink:focus {
     outline: none;
 }
 
@@ -222,14 +226,16 @@ body{
 
 
 /* Main Subtask Div */
-#main{
+#main {
     overflow-y: scroll;
     height: 100vh;
 }
+
 /* removing scrollbar */
 #main::-webkit-scrollbar {
     display: none;
 }
+
 .mainshrinked {
     text-align: center;
     width: 65%;
@@ -240,7 +246,7 @@ body{
 }
 
 /* style when both sidebar and vertical navbar are expanded*/
-.mainextrashrinked{
+.mainextrashrinked {
     text-align: center;
     width: 45%;
     transition: 500ms;
@@ -248,6 +254,7 @@ body{
     overflow-y: scroll;
     height: 100vh;
 }
+
 /* style when every thing is collapsed*/
 .mainexpanded {
     width: 80%;
@@ -276,9 +283,9 @@ body{
     border-radius: 25px;
     float: right;
     transition: 800ms;
-  }
+}
 
-  .toggleSidebarbtncollapsed {
+.toggleSidebarbtncollapsed {
     background-color: DodgerBlue;
     border: none;
     color: white;
@@ -293,9 +300,13 @@ body{
     margin-right: auto;
     display: block;
     transition: 800ms;
-  }
-.toggleSidebarbtn:focus, .toggleSidebarbtncollapsed:focus, .subtask-adder:focus,
-.tsbtn:focus, .toggleNavbarbtn:focus{
+}
+
+.toggleSidebarbtn:focus,
+.toggleSidebarbtncollapsed:focus,
+.subtask-adder:focus,
+.tsbtn:focus,
+.toggleNavbarbtn:focus {
     outline: none;
 }
 
@@ -329,18 +340,17 @@ body{
     color: white;
     font-size: 36px;
     margin-top: 250px;
-    text-align:center;
+    text-align: center;
 }
 
 /* list stylling */
-ul{
+ul {
     width: 100%;
     list-style-type: none;
     padding: 0;
     margin: 0;
     text-align: center;
 }
-
 
 
 

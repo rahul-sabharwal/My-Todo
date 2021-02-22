@@ -12,13 +12,13 @@ var navhorizontal = true;
 // Function to get all subtasks
 var getSubtasks = (taskname) => {
     var subtaskdiv = document.getElementById('main');
-    subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
+    subtaskdiv.innerHTML = '<button title="' + taskname + '" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
-    
+
     // traversing through object to get subtask of particular task
-    for(var i=0;i<taskObj.length;i++){
-        if(taskObj[i].tname === taskname){
+    for (var i = 0; i < taskObj.length; i++) {
+        if (taskObj[i].tname === taskname) {
             var arr = taskObj[i].subtasks;
         };
     }
@@ -35,15 +35,15 @@ var getSubtasks = (taskname) => {
 
 // Function to add a new subtask
 var addSubtask = (taskname) => {
-    const newsubtask = prompt("Add New Subtask in "+taskname);
+    const newsubtask = prompt("Add New Subtask in " + taskname);
     // Check for Null Value
-    if(newsubtask===null){
+    if (newsubtask === null) {
         return;
     }
     // Check for empty spaces values
-    else if(/\S/.test(newsubtask)){
-        for(var i=0;i<taskObj.length;i++){
-            if(taskObj[i].tname === taskname){
+    else if (/\S/.test(newsubtask)) {
+        for (var i = 0; i < taskObj.length; i++) {
+            if (taskObj[i].tname === taskname) {
                 taskObj[i].subtasks.push(newsubtask);
             };
         }
@@ -61,11 +61,11 @@ function showSubtasks(taskname) {
     var subtaskdiv = document.getElementById('main');
 
     // including button for adding subtsks
-    subtaskdiv.innerHTML='<button title="'+taskname+'" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
+    subtaskdiv.innerHTML = '<button title="' + taskname + '" onclick="addSubtask(this.title)" type="button" class="subtask-adder"><i class="fa fa-plus"></i></button>';
     var subtasklist = document.createElement('ul');
     subtaskdiv.appendChild(subtasklist);
-    for(var i=0;i<taskObj.length;i++){
-        if(taskObj[i].tname === taskname){
+    for (var i = 0; i < taskObj.length; i++) {
+        if (taskObj[i].tname === taskname) {
             var arr = taskObj[i].subtasks;
         };
     }
@@ -81,49 +81,49 @@ function showSubtasks(taskname) {
 
 // Function to add a new task
 var addTask = () => {
-    const newtask = prompt ("Add New Task...");
+    const newtask = prompt("Add New Task...");
 
     // Handle duplicacy of task
-    for(var i=0;i<taskObj.length;i++){
-        if(newtask===taskObj[i].tname){
+    for (var i = 0; i < taskObj.length; i++) {
+        if (newtask === taskObj[i].tname) {
             alert("Task Already Present!!!");
             return;
         }
     }
     // Check null values
-    if(newtask === null){
+    if (newtask === null) {
         return;
     }
     // Check value of empty spaces
-    if(/\S/.test(newtask)){
+    if (/\S/.test(newtask)) {
         var element = {
-            tname : newtask,
-            subtasks : []
+            tname: newtask,
+            subtasks: []
         }
         taskObj.push(element);
         localStorage.taskObj = taskObj;
     }
     // Check value of empty spaces
-    if(/\S/.test(element.tname)){
+    if (/\S/.test(element.tname)) {
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
         var ar = [];
-        for(var i=0;i<taskObj.length;i++){
+        for (var i = 0; i < taskObj.length; i++) {
             ar.push(taskObj[i].tname);
         }
         ar.forEach((element) => {
             let li = document.createElement('li');
             li.setAttribute("onclick", "showSubtasks(this.title)");
-            
+
             // if sidebar is collapsed show first letter of task in capital
-            if(collapsed){
-                li.setAttribute("id", "task"+taskObj.length);
+            if (collapsed) {
+                li.setAttribute("id", "task" + taskObj.length);
                 li.setAttribute("class", "task");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
                 li.innerHTML = element.charAt(0).toUpperCase();
             } else {
-                li.setAttribute("id", "task"+taskObj.length);
+                li.setAttribute("id", "task" + taskObj.length);
                 li.setAttribute("class", "task");
                 li.setAttribute("title", element);
                 tasklist.appendChild(li);
@@ -139,56 +139,56 @@ var addTask = () => {
 var toggleSidebar = () => {
     console.log(document.getElementById("tasks"))
 
-    if(!collapsed){
-        if(!navhorizontal){
+    if (!collapsed) {
+        if (!navhorizontal) {
             document.getElementById("main").setAttribute("class", "mainshrinked")
-        }else{
+        } else {
             document.getElementById("main").setAttribute("class", "mainexpanded")
         }
         collapsed = true;
         document.getElementById("sidebar").setAttribute("class", "tcollapsed")
         document.getElementById("addtask").setAttribute("class", "task-adder-shrink")
         document.getElementById("addtask").innerHTML = "+";
-        document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtncollapsed")
-        document.getElementById("toggleicon").setAttribute("class","fa fa-arrow-right")
+        document.getElementById("toggleSidebarbtn").setAttribute("class", "toggleSidebarbtncollapsed")
+        document.getElementById("toggleicon").setAttribute("class", "fa fa-arrow-right")
         var ar = [];
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
-        for(var i=0;i<taskObj.length;i++){
+        for (var i = 0; i < taskObj.length; i++) {
             ar.push(taskObj[i].tname);
         }
 
         ar.forEach((element) => {
             let li = document.createElement('li');
             li.setAttribute("onclick", "showSubtasks(this.title)");
-                li.setAttribute("id", "task"+taskObj.length);
-                li.setAttribute("class", "task-shrink");
-                li.setAttribute("title", element);
-                tasklist.appendChild(li);
-                li.innerHTML = element.charAt(0).toUpperCase();
+            li.setAttribute("id", "task" + taskObj.length);
+            li.setAttribute("class", "task-shrink");
+            li.setAttribute("title", element);
+            tasklist.appendChild(li);
+            li.innerHTML = element.charAt(0).toUpperCase();
 
         });
 
-    }else{
-        if(!navhorizontal){
+    } else {
+        if (!navhorizontal) {
             console.log("159")
             document.getElementById("main").setAttribute("class", "mainextrashrinked")
-        }else{
+        } else {
             console.log("162")
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }
-        collapsed=false;
+        collapsed = false;
         document.getElementById("sidebar").setAttribute("class", "tactive")
-        
+
         document.getElementById("addtask").setAttribute("class", "task-adder")
         document.getElementById("addtask").innerHTML = "+  Add Task";
-        document.getElementById("toggleSidebarbtn").setAttribute("class","toggleSidebarbtn")
-        document.getElementById("toggleicon").setAttribute("class","fa fa-close")
-        
+        document.getElementById("toggleSidebarbtn").setAttribute("class", "toggleSidebarbtn")
+        document.getElementById("toggleicon").setAttribute("class", "fa fa-close")
+
         var ar = [];
         var tasklist = document.getElementById('tasklist');
         tasklist.innerHTML = '';
-        for(var i=0;i<taskObj.length;i++){
+        for (var i = 0; i < taskObj.length; i++) {
             ar.push(taskObj[i].tname);
         }
         console.log(ar)
@@ -196,7 +196,7 @@ var toggleSidebar = () => {
         ar.forEach((element) => {
             let li = document.createElement('li');
             li.setAttribute("onclick", "showSubtasks(this.title)");
-            li.setAttribute("id", "task"+taskObj.length);
+            li.setAttribute("id", "task" + taskObj.length);
             li.setAttribute("class", "task");
             li.setAttribute("title", element);
             tasklist.appendChild(li);
@@ -208,21 +208,20 @@ var toggleSidebar = () => {
 
 // Toggle Navbar to set Vertical or Horizontal
 var toggleNavbar = () => {
-    if(navhorizontal){
-        if(!collapsed){
+    if (navhorizontal) {
+        if (!collapsed) {
             document.getElementById("main").setAttribute("class", "mainextrashrinked")
-        }else{
+        } else {
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }
         navhorizontal = false;
         document.getElementById("navbarh").setAttribute("class", "navbarhcollapsed");
         document.getElementById("navbarv").setAttribute("class", "navbarvvisible");
 
-    }else{
-        if(collapsed){
+    } else {
+        if (collapsed) {
             document.getElementById("main").setAttribute("class", "mainexpanded")
-        }
-        else{
+        } else {
             document.getElementById("main").setAttribute("class", "mainshrinked")
         }
         navhorizontal = true;
